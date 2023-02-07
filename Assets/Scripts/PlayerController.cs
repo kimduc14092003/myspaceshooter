@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float timeFire;
+    private AudioSource audioSource;
 
     public float PlayerHealth;
     public float fireDelay=0.1f;
     public float spaceSpeed;
     public GameObject SpaceBullet;
+    public AudioClip SpaceBulletSound;
     public GameObject positionSpaceFire;
     public int score = 0;
     public TMP_Text yourScore;
@@ -20,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb= GetComponent<Rigidbody2D>();
+        audioSource=GetComponent<AudioSource>();
         timeFire = 0;
     }
     private void Start()
@@ -45,6 +48,7 @@ public class PlayerController : MonoBehaviour
         if (Time.time > timeFire)
         {
             Instantiate(SpaceBullet,positionSpaceFire.transform.position,Quaternion.Euler(Vector3.zero));
+            //audioSource.PlayOneShot(SpaceBulletSound);
             timeFire = Time.time+fireDelay;
         }
     }
@@ -55,7 +59,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Game Over!");
             Time.timeScale = 0;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Additive);
+            SceneManager.LoadScene(2, LoadSceneMode.Additive);
         }
     }
 

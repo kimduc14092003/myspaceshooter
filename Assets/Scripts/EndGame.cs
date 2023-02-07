@@ -8,6 +8,8 @@ public class EndGame : MonoBehaviour
 {
     private PlayerController playerController;
     public TMP_Text yourScore;
+    public GameObject loseGame;
+    public GameObject winGame;
     private void Awake()
     {
         playerController = GameObject.Find("Player").GetComponent<PlayerController>();
@@ -15,6 +17,21 @@ public class EndGame : MonoBehaviour
     private void Start()
     {
         yourScore.text = playerController.score + "";
+        StatusOfEndGame();
+    }
+
+    private void StatusOfEndGame()
+    {
+        if (playerController.score >= 16)
+        {
+            winGame.SetActive(true);
+            loseGame.SetActive(false);
+        }
+        else
+        {
+            winGame.SetActive(false);
+            loseGame.SetActive(true);
+        }
     }
 
     public void OpenHomeScene()

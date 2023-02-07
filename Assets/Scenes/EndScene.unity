@@ -1102,6 +1102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yourScore: {fileID: 1472025499}
+  loseGame: {fileID: 1662530980}
+  winGame: {fileID: 563959107}
 --- !u!1 &1905533829
 GameObject:
   m_ObjectHideFlags: 0

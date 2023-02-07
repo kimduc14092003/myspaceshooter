@@ -593,36 +593,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &369185142 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8201816150787843503, guid: 36eccab19026132459b4234debd90987, type: 3}
-  m_PrefabInstance: {fileID: 8201816151022646489}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &369185144 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8201816150787843489, guid: 36eccab19026132459b4234debd90987, type: 3}
   m_PrefabInstance: {fileID: 8201816151022646489}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &369185148
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 369185142}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f604cd63dde767540b15005f1aa4a1ad, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &411936435
 GameObject:
   m_ObjectHideFlags: 0
@@ -2274,7 +2249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5763543999605021231, guid: 6c58c9cc536edd54784f3bd6cfc8132e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.05
+      value: -0.47
       objectReference: {fileID: 0}
     - target: {fileID: 5763543999605021231, guid: 6c58c9cc536edd54784f3bd6cfc8132e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2325,10 +2300,6 @@ PrefabInstance:
       propertyPath: PC
       value: 
       objectReference: {fileID: 466856144}
-    - target: {fileID: 8201816150787843488, guid: 36eccab19026132459b4234debd90987, type: 3}
-      propertyPath: fireDelay
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8201816150787843489, guid: 36eccab19026132459b4234debd90987, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2376,10 +2347,6 @@ PrefabInstance:
     - target: {fileID: 8201816150787843503, guid: 36eccab19026132459b4234debd90987, type: 3}
       propertyPath: m_Name
       value: enemySpace
-      objectReference: {fileID: 0}
-    - target: {fileID: 8201816151723835848, guid: 36eccab19026132459b4234debd90987, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36eccab19026132459b4234debd90987, type: 3}
