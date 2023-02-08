@@ -38,6 +38,7 @@ public class EnemyList : MonoBehaviour
     {
         createStartValueForList();
         setRandomTimeFireStart();
+        isStartGame = true;
     }
 
     private void FixedUpdate()
@@ -58,10 +59,11 @@ public class EnemyList : MonoBehaviour
                 count++;
             }
         }
-        if (count == 0)
+        if (count == 0&&isStartGame)
         {
             Time.timeScale = 0;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Additive);
+            SceneManager.LoadScene(2, LoadSceneMode.Additive);
+            isStartGame = false;
         }
     }
 

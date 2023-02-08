@@ -11,24 +11,26 @@ public class EnemyController : MonoBehaviour
     public float fireDelay = 0.1f;
     public GameObject enemySpaceBullet;
     public GameObject posEnemySpaceFire;
-
     public GameObject PC;
     public AudioClip deadEnemySource;
-
+    public GameObject destroyEffect;
     private PlayerController playerController;
-    private AudioSource audioSource;
-    private PolygonCollider2D polygonCollider2D;
-    private bool isStartDeadEffect=false;
-    private bool isDying = false;
 
+    private PolygonCollider2D polygonCollider2D;
+    private bool isDying = false;
+    SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         playerController= PC.GetComponent<PlayerController>();
-        audioSource = GetComponent<AudioSource>();
         polygonCollider2D=GetComponent<PolygonCollider2D>();
+        spriteRenderer=GetComponent<SpriteRenderer>();
     }
 
+    private void Start()
+    {
+        spriteRenderer.enabled = true;
+    }
     private void FixedUpdate()
     {
         SpaceFire();
@@ -44,14 +46,18 @@ public class EnemyController : MonoBehaviour
 
     private void EnemyDead()
     {
-            Debug.Log("audio dead");
             isDying = true;
-            audioSource.clip = deadEnemySource;
-            audioSource.Play();
-            polygonCollider2D.enabled = false;
             playerController.score++;
-            Destroy(gameObject, deadEnemySource.length);
+            Invoke("EnemyDisappear", 0.5f);
+            Instantiate(destroyEffect,gameObject.transform);
+            Destroy(gameObject,deadEnemySource.length);
     }
+
+    private void EnemyDisappear()
+    {
+        spriteRenderer.enabled = false;
+    }
+
     private void SpaceFire()
     {
         if (Time.time > timeFire)

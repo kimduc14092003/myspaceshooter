@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float timeFire;
-    private AudioSource audioSource;
 
     public float PlayerHealth;
     public float fireDelay=0.1f;
@@ -22,7 +21,6 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb= GetComponent<Rigidbody2D>();
-        audioSource=GetComponent<AudioSource>();
         timeFire = 0;
     }
     private void Start()
@@ -48,7 +46,6 @@ public class PlayerController : MonoBehaviour
         if (Time.time > timeFire)
         {
             Instantiate(SpaceBullet,positionSpaceFire.transform.position,Quaternion.Euler(Vector3.zero));
-            //audioSource.PlayOneShot(SpaceBulletSound);
             timeFire = Time.time+fireDelay;
         }
     }

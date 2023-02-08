@@ -172,7 +172,8 @@ MonoBehaviour:
   enemySpaceBullet: {fileID: 5898574126512541398, guid: 5d092f2b03203eb4ca5678e5302e2228, type: 3}
   posEnemySpaceFire: {fileID: 8201816151723835862}
   PC: {fileID: 0}
-  deadEnemySource: {fileID: 8300000, guid: 7354e72364617f64d99d782da802fa5c, type: 3}
+  deadEnemySource: {fileID: 8300000, guid: 32aab8f0294bda046b08c81cfb96c56a, type: 3}
+  destroyEffect: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
 --- !u!95 &369185148
 Animator:
   serializedVersion: 5
